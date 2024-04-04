@@ -81,14 +81,17 @@ async function loadAudio(src, id) {
 
 // loading assets
 async function startLoading() {
-	loadVideo("./videos/First.mp4", 1);
-	loadVideo("./videos/1.mp4", 2);
-	loadVideo("./videos/Second_1.mp4", 3);
-	loadVideo("./videos/2_1.mp4", 4);
-	loadVideo("./videos/2_2.mp4", 5);
-	loadVideo("./videos/2_3.mp4", 6);
-	loadAudio("./audio/1.mp3", 1);
+	loadVideo("https://milosmusic.b-cdn.net/MainVideos/milo1.mp4", 1);
+	loadVideo("https://milosmusic.b-cdn.net/MainVideos/inter1.mp4", 2);
+	loadVideo("https://milosmusic.b-cdn.net/MainVideos/milo2branch1.mp4", 3);
+	loadVideo("https://milosmusic.b-cdn.net/MainVideos/inter2_1.mp4", 4);
+	loadVideo("https://milosmusic.b-cdn.net/MainVideos/inter2_2.mp4", 5);
+	loadVideo("https://milosmusic.b-cdn.net/MainVideos/inter2_3.mp4", 6);
+	loadAudio("https://milosmusic.b-cdn.net/MainVideos/1.mp3", 1);
 }
+
+
+
 
 async function onLoaded() {
 	homepage.style.opacity = "0";
