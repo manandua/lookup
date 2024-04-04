@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+		</style>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
+			integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	</head>
+	<body>
+		<div id="homepage">
+			
+				<lottie-player
+					src="./lottie/logo_lookuptest.json"
+					autoplay
+					loop
+					class="logoLottie"
+				></lottie-player>
+			
+
+			<!-- <button id="startButton" class="buttonStyle">
+				<div id="play"></div>
+			</button> -->
+			<div id="startbuttoncontainer">
+				<!-- <div class="lottie" id="svg"></div> -->
+				<lottie-player
+					src="./lottie/play_phone_centered.json"
+					class="lottie"
+					id="svg"
+				></lottie-player>
+				<div id="startButton" class="buttonStyle buttonHover">
+					<div id="progress"></div>
+				</div>
+			</div>
+
+			<div>Follow along Milo's journey</div>
+		</div>
+		<div class="maindiv">
+			<div id="overlay">
+				<div id="buttons"></div>
+				<div id="timer"></div>
+			</div>
+			<div id="texture">
+				<img src="Photos/rough_Arches_4k.jpg" draggable="false" />
+			</div>
+			<video id="video1" class="video" playsinline preload="auto"></video>
+			<video id="video2" class="video" playsinline preload="none"></video>
+			<video id="video3" class="video" playsinline preload="none"></video>
+			<video id="video4" class="video" playsinline preload="none"></video>
+			<video id="video5" class="video" playsinline preload="none"></video>
+			<video id="video6" class="video" playsinline preload="none"></video>
+			<video id="video7" class="video" playsinline preload="none"></video>
+			<video id="video8" class="video" playsinline preload="none"></video>
+		</div>
+		<audio id="audio1" class="audio"></audio>
+	</body>
+	<script src="app.js"></script>
+</html>
