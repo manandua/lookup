@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap");
-
+@import url('satoshi.css');
 :root {
-	--scale: min(calc((100vw / 1920)), calc((100vh / 1080)));
+	--scale: 1;
 	--purple: #5448c8;
 	--dark-grey: #1c2321;
 	--green: #6a994e;
@@ -23,7 +21,7 @@ body {
 	height: 100vh;
 	padding: 0;
 	margin: 0;
-	font-family: "Inter", sans-serif;
+	font-family: "Satoshi-Regular", sans-serif;
 	overflow: hidden;
 }
 
@@ -37,6 +35,12 @@ body {
 	place-items: center;
 	z-index: 11;
 	transition: opacity 1.5s linear, transform 2s;
+}
+
+
+.rightHeading{
+	font-size: 2em;
+	font-family: "Satoshi-Medium", sans-serif;
 }
 
 .logoLottie{
@@ -174,7 +178,7 @@ body {
 }
 #overlay #buttons {
 	position: absolute;
-	top: calc(var(--scale) * 135);
+	top: calc(var(--scale) * 135px);
 	display: flex;
 	justify-content: space-around;
 	width: 100%;
@@ -189,24 +193,22 @@ body {
 	color: #e5e8d0;
 	border: 1px solid #e5e8d0;
 	text-decoration: none;
-	border-radius: calc(var(--scale) * 10);
+	border-radius: calc(var(--scale) * 10px);
 	position: absolute;
-	height: calc(var(--scale) * 80);
-	font-size: calc(var(--scale) * 24);
+	height: calc(var(--scale) * 80px);
+	font-size: calc(var(--scale) * 24px);
 	z-index: 6;
 	cursor: pointer;
 }
 
 .snoozestop {
-	font-family: "Inter", sans-serif;
-	font-weight: 300;
 	color: var(--dark-grey);
 	text-decoration: none;
 	border: none;
-	border-radius: calc(var(--scale) * 40);
-	width: calc(var(--scale) * 200);
-	height: calc(var(--scale) * 80);
-	font-size: calc(var(--scale) * 24);
+	border-radius: calc(var(--scale) * 40px);
+	width: calc(var(--scale) * 200px);
+	height: calc(var(--scale) * 80px);
+	font-size: calc(var(--scale) * 24px);
 	z-index: 6;
 	cursor: pointer;
 }
@@ -226,21 +228,27 @@ body {
 }
 .snoozestop:nth-child(2) {
 	background: #ffffff10;
-	backdrop-filter: blur(10px);
+	transition: all 0.1s ease-out;
 }
 
+
+.snoozestop:nth-child(2):hover:disabled {
+	width: calc(var(--scale) * 413px);
+	background: #511616;
+	color: var(--offwhite);
+}
 .snoozestop:nth-child(2):hover:enabled {
 	background-color: #edf0da;
 	color: #2d3935;
 }
 
 .option:nth-child(1) {
-	width: calc(var(--scale) * 405);
-	left: calc(var(--scale) * 515);
+	width: calc(var(--scale) * 405px);
+	left: calc(var(--scale) * 515px);
 }
 .option:nth-child(2) {
-	width: calc(var(--scale) * 303);
-	left: calc(var(--scale) * 1000);
+	width: calc(var(--scale) * 303px);
+	left: calc(var(--scale) * 1000px);
 }
 .option:hover {
 	background-color: #e5e8d0;
@@ -248,7 +256,7 @@ body {
 }
 
 #timer {
-	--width: 60;
+	--width: 60px;
 	position: absolute;
 	font-family: "Inter", sans-serif;
 	font-weight: 300;
@@ -258,7 +266,7 @@ body {
 	border-radius: calc(var(--scale) * var(--width) / 2);
 	width: calc(var(--scale) * var(--width));
 	height: calc(var(--scale) * var(--width));
-	font-size: calc(var(--scale) * 24);
+	font-size: calc(var(--scale) * 24px);
 	z-index: 6;
 	cursor: default;
 	background: #ffffff10;
@@ -287,12 +295,13 @@ body {
 	opacity: 0.2;
 	isolation: isolate;
 	pointer-events: none;
+	display: none;
 }
 #texture img {
 	position: absolute;
 	width: 105%;
 	object-fit: cover;
-	animation: textureanimate 0.5s steps(2) infinite;
+	/* animation: textureanimate 0.5s steps(2) infinite; */
 	transform-origin: center;
 }
 
@@ -308,4 +317,13 @@ body {
 
 .audio {
 	display: none;
+}
+
+
+
+
+@media screen {
+	#texture{
+		display: none;
+	}
 }
