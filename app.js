@@ -89,15 +89,15 @@ async function loadAudio(src, id) {
 
 // loading assets
 async function startLoading() {
-	loadVideo("./short/First.mp4", 1);
-	loadVideo("./videos/1.mp4", 2);
-	loadVideo("./short/Second_1.mp4", 3);
+	loadVideo("./videos/1_4k.mp4", 1);
+	loadVideo("./videos/1_1_4k.mp4", 2);
+	loadVideo("./videos/2_4k.mp4", 3);
 	loadVideo("./videos/2_1.mp4", 4);
 	loadVideo("./videos/2_2.mp4", 5);
 	loadVideo("./videos/2_3.mp4", 6);
-	loadVideo("./videos/2_2_1080.mp4", 7);
+	loadVideo("./videos/2_2_4k.mp4", 7);
 	loadAudio("./audio/1.mp3", 1);
-	loadVideo("./videos/3_1080.mp4", 8)
+	loadVideo("./videos/3_4k.mp4", 8)
 }
 
 
