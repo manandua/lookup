@@ -160,6 +160,7 @@ videos[0].addEventListener("ended", async () => {
 		videos[1].style.opacity = "0";
 		buttons.style.opacity = "0";
 		audios[0].pause();
+		videos[1].pause();
 		await sleep(900);
 		while (buttons.firstChild) {
 			buttons.removeChild(buttons.firstChild);
@@ -173,6 +174,7 @@ videos[0].addEventListener("ended", async () => {
 	option2.addEventListener("click", async () => {
 		endTimer();
 		videos[1].style.opacity = "0";
+		videos[1].pause()
 		buttons.style.opacity = "0";
 		audios[0].pause();
 		await sleep(900);
