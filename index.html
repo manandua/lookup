@@ -18,7 +18,14 @@
 		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	</head>
 	<body>
-		<div id="homepage">
+		<div class="password-form">
+			<form id="passwordForm">
+				<input type="password" placeholder="Enter your password" required id="passwordInput">
+				<input type="submit" value="Submit">
+				<p id="errorMessage" class="error-message"></p>
+			</form>
+		</div>
+		<div id="homepage" style="display: none;">
 			
 				<lottie-player
 					src="./lottie/logo_lookuptest.json"
@@ -45,7 +52,7 @@
 
 			<div class='rightHeading'>Follow Along Milo's journey.</div>
 		</div>
-		<div class="maindiv">
+		<div class="maindiv" style="display: none;">
 			<div id="overlay">
 				<div id="buttons"></div>
 				<div id="timer"></div>

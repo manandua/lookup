@@ -25,6 +25,37 @@ body {
 	overflow: hidden;
 }
 
+.password-form {
+	max-width: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.password-form input[type="password"] {
+	width: calc(100% - 10px);
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.password-form input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
+}
+.password-form input[type="submit"]:hover {
+	background-color: #0056b3;
+}
 #homepage {
 	position: absolute;
 	height: 100vh;
@@ -36,7 +67,6 @@ body {
 	z-index: 11;
 	transition: opacity 1.5s linear, transform 2s;
 }
-
 
 .rightHeading{
 	font-size: 2em;

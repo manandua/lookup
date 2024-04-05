@@ -56,7 +56,21 @@ function UpdateProgressBar(){
 	progressBar.style.width = `calc(${progress}% - 20px)`;
 }
 
+document.getElementById("passwordForm").addEventListener("submit", function(event) {
+	var password = document.getElementById("passwordInput").value;
+	if (password !== "MiloStoleMyBeat123") {
+		document.getElementById("errorMessage").textContent = "Incorrect password!";
+		event.preventDefault(); // Prevent form submission
+	} else {
+		document.getElementById("errorMessage").textContent = "";
+		// Password is correct, you can proceed with form submission
+		document.getElementsByClassName("password-form")[0].style.display = "none";
+		document.getElementById("homepage").style.display = "grid";
+		document.getElementsByClassName("maindiv")[0].style.display = "grid";
+		event.preventDefault();
 
+	}
+});
 
 
 async function loadVideo(src, id) {
@@ -89,21 +103,29 @@ async function loadAudio(src, id) {
 
 // loading assets
 async function startLoading() {
-	loadVideo("./videos/1_4k.mp4", 1);
-	loadVideo("./videos/1_1_4k.mp4", 2);
-	loadVideo("./videos/2_4k.mp4", 3);
-	loadVideo("./videos/2_1.mp4", 4);
-	loadVideo("./videos/2_2.mp4", 5);
-	loadVideo("./videos/2_3.mp4", 6);
-	loadVideo("./videos/2_2_4k.mp4", 7);
+	// loadVideo("./videos/1_4k.mp4", 1);
+	// loadVideo("./videos/1_1_4k.mp4", 2);
+	// loadVideo("./videos/2_4k.mp4", 3);
+	// loadVideo("./videos/2_1.mp4", 4);
+	// loadVideo("./videos/2_2.mp4", 5);
+	// loadVideo("./videos/2_3.mp4", 6);
+	// loadVideo("./videos/2_2_4k.mp4", 7);
 	loadAudio("./audio/1.mp3", 1);
-	loadVideo("./videos/3_4k.mp4", 8)
+	// loadVideo("./videos/3_4k.mp4", 8)
+	[
+		"https://milosmusic.b-cdn.net/MainVideos/1.mp4",
+	"https://milosmusic.b-cdn.net/MainVideos/1_1.mp4",
+	"https://milosmusic.b-cdn.net/MainVideos/2.mp4",
+	"https://milosmusic.b-cdn.net/MainVideos/inter2_1.mp4",
+	"https://milosmusic.b-cdn.net/MainVideos/inter2_2.mp4",
+	"https://milosmusic.b-cdn.net/MainVideos/inter2_3.mp4",
+	"https://milosmusic.b-cdn.net/MainVideos/2_2.mp4",
+	"https://milosmusic.b-cdn.net/MainVideos/3.mp4",
+	].forEach((src, index) => {
+			loadVideo(src, index + 1);
+	}
+	)
 }
-
-
-
-
-
 
 async function onLoaded() {
 	homepage.style.opacity = "0";
