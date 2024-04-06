@@ -66,11 +66,13 @@ body {
 	place-items: center;
 	z-index: 11;
 	transition: opacity 1.5s linear, transform 2s;
+	padding: 2em;
 }
 
 .rightHeading{
 	font-size: 2em;
 	font-family: "Satoshi-Medium", sans-serif;
+	grid-column: 3;
 }
 
 .logoLottie{
@@ -95,8 +97,10 @@ body {
 	border: 2px solid black;
 	text-decoration: none;
 	cursor: pointer;
-	height: 200px;
-	width: 200px;
+	aspect-ratio: 1/1;
+	width: 14%;
+	max-width: 300px;
+	min-width: 150px;
 	border-radius: 50%;
 	z-index: 2;
 	position: absolute;
@@ -126,8 +130,10 @@ body {
 
 .lottie {
 	position: absolute;
-	width: 300px;
-	height: 300px;
+	width: 30%;
+	min-width: 200px;
+	max-width: 300px;
+	height: auto;
 	top: 50%;
 	left: 50%;
 	transform: translate(-47%, -50%);
@@ -288,8 +294,6 @@ body {
 #timer {
 	--width: 60px;
 	position: absolute;
-	font-family: "Inter", sans-serif;
-	font-weight: 300;
 	color: #edf0da;
 	text-decoration: none;
 	border: 1px solid var(--offwhite);
@@ -303,7 +307,9 @@ body {
 	backdrop-filter: blur(10px);
 	right: 10px;
 	bottom: 10px;
-	display: none;
+	display: flex;
+	opacity: 0;
+	pointer-events: none;
 	align-items: center;
 	justify-content: center;
 }
@@ -356,4 +362,45 @@ body {
 	#texture{
 		display: none;
 	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.mobile {
+	z-index: 100;
+	position: absolute;
+	inset: 0;
+	background-color: var(--offwhite);
+	padding: 2em;
+	font-size: 24px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	display: none;
+	align-items: center;
+}
+.mobile p{
+	margin: 0;
+}
+.italic{
+	font-family: 'Satoshi-Italic', sans-serif;
+}
+.bold{
+	font-family: 'Satoshi-Medium', sans-serif;
+}
+
+.mobileLottie{
+	width: 100%;
+	max-width: 500px;
+	aspect-ratio: 1/1;
+	height: auto;
 }
