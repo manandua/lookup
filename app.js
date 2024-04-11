@@ -41,8 +41,8 @@ button.addEventListener("click", async () => {
 	button.classList.remove("buttonHover");
 	button.style.pointerEvents = "none";
 	await sleep(300);
-	button.style.height = "20px";
-	button.style.width = "100px";
+	button.style.height = "calc(var(--scale)*20px)";
+	button.style.width = "calc(var(--scale)*100px)";
 	button.style.borderRadius = "10px";
 	await sleep(400);
 	progressBar.style.opacity = "1";
@@ -79,7 +79,7 @@ document
 	.getElementById("passwordForm")
 	.addEventListener("submit", function (event) {
 		var password = document.getElementById("passwordInput").value;
-		if (password !== "1") {
+		if (password !== "MiloStoleMyBeat123") {
 			document.getElementById("errorMessage").textContent =
 				"Incorrect password!";
 			event.preventDefault(); // Prevent form submission

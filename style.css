@@ -107,8 +107,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	transition: height 0.5s ease-in, border-radius 0.3s ease-in-out,
-		width 0.5s ease-in;
+	transition: height 0.5s ease-in, border-radius 0.3s ease-in-out, width 0.5s ease-in;
 	display: grid;
 	align-items: center;
 }
@@ -195,7 +194,7 @@ body {
 	color: #e5e8d0;
 	border: 1px solid #e5e8d0;
 	text-decoration: none;
-	border-radius: calc(var(--scale) * 15px);
+	border-radius: calc(var(--scale) * 20px);
 	position: absolute;
 	height: calc(var(--scale) * 80px);
 	font-size: calc(var(--scale) * 24px);
