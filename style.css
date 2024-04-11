@@ -149,42 +149,7 @@ body {
 .logocontainer{
 	flex: 1;
 }
-#play {
-	--r: 5px;
 
-	height: 83px;
-	aspect-ratio: cos(30deg);
-	--_g: calc(tan(60deg) * var(--r)) left var(--r), #000 98%, #0000 101%;
-	-webkit-mask: conic-gradient(
-				from 60deg at calc(3 * var(--r) / 2 - 100%),
-				#000 60deg,
-				#0000 0
-			)
-			0 0 / calc(100% - 3 * var(--r) / 2) 100% no-repeat,
-		radial-gradient(
-			var(--r) at calc(100% - 2 * var(--r)) 50%,
-			#000 98%,
-			#0000 101%
-		),
-		radial-gradient(var(--r) at top var(--_g)),
-		radial-gradient(var(--r) at bottom var(--_g));
-	mask: conic-gradient(
-				from 60deg at calc(3 * var(--r) / 2 - 100%),
-				#000 60deg,
-				#0000 0
-			)
-			0 0 / calc(100% - 3 * var(--r) / 2) 100% no-repeat,
-		radial-gradient(
-			var(--r) at calc(100% - 2 * var(--r)) 50%,
-			#000 98%,
-			#0000 101%
-		),
-		radial-gradient(var(--r) at top var(--_g)),
-		radial-gradient(var(--r) at bottom var(--_g));
-	clip-path: polygon(100% 50%, 0 100%, 0 0);
-	margin-left: calc(var(--r) + 11px);
-	background: #000;
-}
 
 .maindiv {
 	width: 100%;
@@ -212,6 +177,7 @@ body {
 		height: auto;
 	}
 }
+
 #overlay #buttons {
 	position: absolute;
 	top: calc(var(--scale) * 135px);
@@ -222,14 +188,14 @@ body {
 	opacity: 0;
 	transition: opacity 0.5s linear;
 }
+
 .option {
-	font-family: "Inter", sans-serif;
 	font-weight: 300;
 	background-color: transparent;
 	color: #e5e8d0;
 	border: 1px solid #e5e8d0;
 	text-decoration: none;
-	border-radius: calc(var(--scale) * 10px);
+	border-radius: calc(var(--scale) * 15px);
 	position: absolute;
 	height: calc(var(--scale) * 80px);
 	font-size: calc(var(--scale) * 24px);
@@ -367,14 +333,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
 .mobile {
 	z-index: 100;
 	position: absolute;
@@ -403,4 +361,56 @@ body {
 	max-width: 500px;
 	aspect-ratio: 1/1;
 	height: auto;
+}
+
+
+
+#thirdInteraction{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	pointer-events: none;
+}
+
+#thirdInteraction > div{
+	position: absolute;
+	top: calc(var(--scale)*300px);
+	left: calc(var(--scale)*682px);
+	font-size: calc(var(--scale)*42px);
+	color: #1C2321;
+	
+}
+#thirdInteraction > button{
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	position: absolute;
+	left: calc(var(--scale)*682px);
+	width: calc(var(--scale)*556px);
+	height: calc(var(--scale)*80px);
+	border: 1px solid #E5E8D0;
+	background: #1C2321;
+	color: var(--offwhite);
+	font-size: calc(var(--scale)*24px);
+	cursor: pointer;
+}
+#thirdInteraction > button:nth-child(2){
+	top: calc(var(--scale)*366px);
+}
+#thirdInteraction > button:nth-child(3){
+	top: calc(var(--scale)*446px);
+}
+#thirdInteraction > button:nth-child(4){
+	top: calc(var(--scale)*526px);
+}
+#thirdInteraction > button:hover {
+	background: #E5E8D0;
+	color: #1C2321;
+
+}
+
+#thirdInteraction > button > i{
+	margin-left: calc(var(--scale)*20px);
+	margin-right: calc(var(--scale)*40px);
+	font-size: calc(var(--scale)*40px);
 }

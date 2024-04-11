@@ -16,6 +16,8 @@
 		></script>
 		<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
 		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<script defer src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	</head>
 	<body>
 		<div class="mobile" id="mobile">
@@ -68,6 +70,23 @@
 		</div>
 		<div class="maindiv" style="display: none;">
 			<div id="overlay">
+				<div id="thirdInteraction">
+					<div>
+						Your Library
+					</div>
+					<button>
+						<i class='bx bxs-music'></i>
+						Soul Crushing Thursday Evening
+					</button>
+					<button>
+						<i class='bx bxs-music'></i>
+						Lofi Girl - beats to relax/study to
+					</button>
+					<button>
+						<i class='bx bxs-music'></i>
+						Milo's Vault (unreleased)
+					</button>
+				</div>
 				<div id="buttons"></div>
 				<div id="timer"></div>
 			</div>
@@ -75,13 +94,14 @@
 				<img src="Photos/rough_Arches_4k.jpg" draggable="false" />
 			</div>
 			<video id="video1" class="video" playsinline preload="auto"></video>
-			<video id="video2" class="video" playsinline preload="none"></video>
+			<video id="video2" class="video" playsinline preload="none" loop></video>
 			<video id="video3" class="video" playsinline preload="none"></video>
 			<video id="video4" class="video" playsinline preload="none"></video>
 			<video id="video5" class="video" playsinline preload="none"></video>
 			<video id="video6" class="video" playsinline preload="none"></video>
 			<video id="video7" class="video" playsinline preload="none"></video>
 			<video id="video8" class="video" playsinline preload="none"></video>
+			<video id="video9" class="video" playsinline preload="none" loop></video>
 		</div>
 		<audio id="audio1" class="audio"></audio>
 	</body>
