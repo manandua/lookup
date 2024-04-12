@@ -28,7 +28,7 @@ window.mobileCheck = function () {
 			check = true;
 	})(navigator.userAgent || navigator.vendor || window.opera);
 	if (check) {
-		document.getElementById("mobile").style.display = "flex";
+		document.getElementById("mobile").style.display = "none";
 	}
 };
 window.mobileCheck();
@@ -96,6 +96,7 @@ function UpdateProgressBar() {
 
 document.addEventListener("keydown", (e) => {
 	try {
+		
 		if (e.key == " ") {
 			if (currentVideo.paused) {
 				currentVideo.play();
@@ -105,20 +106,20 @@ document.addEventListener("keydown", (e) => {
 			}
 		}
 	} catch (e) {
-		null;
+		
 	}
 });
 
 async function loadVideo(src, id) {
-	console.log("loading video" + id);
+	
 	let loadVideo = await fetch(src);
 	let video = await loadVideo.blob();
 	let videoUrl = URL.createObjectURL(video);
 	videos[id - 1].src = videoUrl;
-	console.log("video loaded" + id);
+	
 	loadedAssets++;
 	UpdateProgressBar();
-	if (loadedAssets == 11) {
+	if (loadedAssets == 3) {
 		await onLoaded();
 	}
 }
@@ -132,7 +133,7 @@ async function loadAudio(src, id) {
 	audios[id - 1].loop = true;
 	loadedAssets++;
 	UpdateProgressBar();
-	if (loadedAssets == 7) {
+	if (loadedAssets == 3) {
 		await onLoaded();
 	}
 }
@@ -191,7 +192,6 @@ function handleTimer(time, func) {
 		time--;
 	}, 1000);
 	function endTimer() {
-		console.log("cleared interval");
 		clearInterval(interval);
 		timer.style.display = "none";
 	}
