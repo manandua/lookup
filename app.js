@@ -100,6 +100,7 @@ document.addEventListener("keydown", (e) => {
 			if (currentVideo.paused) {
 				currentVideo.play();
 			} else {
+				
 				currentVideo.pause();
 			}
 		}
@@ -148,15 +149,16 @@ async function startLoading() {
 	loadAudio("./audio/1.mp3", 1);
 	// loadVideo("./videos/3_4k.mp4", 8)
 	[
-		"https://milosmusic.b-cdn.net/MainVideos/1.mp4", //1
-		"https://milosmusic.b-cdn.net/MainVideos/1_1.mp4", //2
-		"https://milosmusic.b-cdn.net/MainVideos/2.mp4", //3
-		"https://milosmusic.b-cdn.net/MainVideos/inter2_1.mp4", //4
-		"https://milosmusic.b-cdn.net/MainVideos/inter2_2.mp4", //5
-		"https://milosmusic.b-cdn.net/MainVideos/inter2_3.mp4", //6
-		"https://milosmusic.b-cdn.net/MainVideos/2_2.mp4", //7
-		"https://milosmusic.b-cdn.net/MainVideos/3.mp4", //8
-		"https://milosmusic.b-cdn.net/MainVideos/3_1.mp4", //9
+		"https://milosmusic.b-cdn.net/MainVideos/1.mp4", //0
+		"https://milosmusic.b-cdn.net/MainVideos/1_1.mp4", //1
+		"https://milosmusic.b-cdn.net/MainVideos/2.mp4", //2
+		"https://milosmusic.b-cdn.net/MainVideos/2_1.mp4", //3
+		"https://milosmusic.b-cdn.net/MainVideos/2_22.mp4", //4
+		"https://milosmusic.b-cdn.net/MainVideos/2_3.mp4", //5
+		"https://milosmusic.b-cdn.net/MainVideos/2_2.mp4", //6
+		"https://milosmusic.b-cdn.net/MainVideos/3.mp4", //7
+		"https://milosmusic.b-cdn.net/MainVideos/3_1.mp4", //8
+		"https://milosmusic.b-cdn.net/MainVideos/2_22.mp4", //9
 	].forEach((src, index) => {
 		loadVideo(src, index + 1);
 	});
@@ -212,7 +214,7 @@ videos[0].addEventListener("ended", async () => {
 	option1.innerHTML = "Tomorrow's a new day, go to sleep";
 	option2.innerHTML = "Lemme check my Phone";
 	buttons.style.opacity = "1";
-	const endTimer = handleTimer(10, option1);
+	const endTimer = handleTimer(100, option1);
 	option1.addEventListener("click", async () => {
 		endTimer();
 		videos[1].style.opacity = "0";
@@ -258,7 +260,6 @@ async function snoozeInteraction() {
 	option2.innerHTML = "Stop";
 	option2.addEventListener("mouseover", async () => {
 		if (option2.disabled == true) {
-			await sleep(50);
 			option2.innerHTML = "Nah, I'm gonna sleep more";
 		}
 	});
@@ -279,7 +280,7 @@ async function snoozeInteraction() {
 	videos[3].style.opacity = "1";
 	videos[3].play();
 	videos[3].loop = true;
-	snoozeTimers = handleTimer(5, option1);
+	snoozeTimers = handleTimer(50, option1);
 	option1.addEventListener("click", () => secondInteraction(iterCount));
 	option2.addEventListener("click", async () => {
 		snoozeTimers();
@@ -307,9 +308,9 @@ async function secondInteraction(i) {
 	if (i == 1) {
 		buttons.children[0].disabled = true;
 		buttons.children[1].disabled = false;
-		snoozeTimers = handleTimer(5, buttons.children[1]);
+		snoozeTimers = handleTimer(50, buttons.children[1]);
 	} else {
-		snoozeTimers = handleTimer(5, buttons.children[0]);
+		snoozeTimers = handleTimer(50, buttons.children[0]);
 	}
 	videos[3 + i].style.display = "none";
 	videos[4 + i].style.opacity = "1";
@@ -332,5 +333,16 @@ videos[7].addEventListener("ended", async () => {
 	thirdInteraction.style.opacity = "1";
 	thirdInteraction.style.pointerEvents = "all";
 	let buttons = thirdInteraction.getElementsByTagName("button");
-
+	buttons[0].addEventListener("click", async () => {
+		videos[8].style.opacity = "0";
+		videos[8].pause();
+		thirdInteraction.style.opacity = "0";
+		thirdInteraction.style.pointerEvents = "none";
+		await sleep(1000);
+		videos[9].style.display = "block";
+		videos[9].style.opacity = "1";
+		videos[9].play();
+		currentVideo = videos[9];
+	});
+	handleTimer(10, buttons[0]);
 });

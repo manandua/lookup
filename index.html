@@ -14,9 +14,7 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
-		<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-		<script defer src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+		<script src="/node_modules/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	</head>
 	<body>
@@ -42,7 +40,7 @@
 			</form>
 		</div>
 		<div id="homepage" style="display: none;">
-			
+
 				<lottie-player
 					src="./lottie/logo_lookuptest.json"
 					autoplay
@@ -70,6 +68,11 @@
 		</div>
 		<div class="maindiv" style="display: none;">
 			<div id="overlay">
+				<div id="playPause">
+					<div id="playPauseButton">
+						<i class='bx bx-play'></i>
+					</div>
+				</div>
 				<div id="thirdInteraction">
 					<div>
 						Your Library

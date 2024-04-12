@@ -210,6 +210,8 @@ body {
 	width: calc(var(--scale) * 200px);
 	height: calc(var(--scale) * 80px);
 	font-size: calc(var(--scale) * 24px);
+	white-space: nowrap;
+  overflow: hidden;
 	z-index: 6;
 	cursor: pointer;
 }
@@ -230,9 +232,8 @@ body {
 .snoozestop:nth-child(2) {
 	background: #ffffff10;
 	transition: all 0.1s ease-out;
+
 }
-
-
 .snoozestop:nth-child(2):hover:disabled {
 	width: calc(var(--scale) * 413px);
 	background: #511616;
@@ -250,6 +251,7 @@ body {
 .option:nth-child(2) {
 	width: calc(var(--scale) * 303px);
 	left: calc(var(--scale) * 1000px);
+	white-space: nowrap;
 }
 .option:hover {
 	background-color: #e5e8d0;
@@ -412,4 +414,23 @@ body {
 	margin-left: calc(var(--scale)*20px);
 	margin-right: calc(var(--scale)*40px);
 	font-size: calc(var(--scale)*40px);
+}
+
+
+
+#playPause{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+}
+
+#playPauseButton{
+	color: var(--offwhite);
+	font-size: 24px;
+	cursor: pointer;
 }
