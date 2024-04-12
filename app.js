@@ -118,7 +118,7 @@ async function loadVideo(src, id) {
 	console.log("video loaded" + id);
 	loadedAssets++;
 	UpdateProgressBar();
-	if (loadedAssets == 7) {
+	if (loadedAssets == 11) {
 		await onLoaded();
 	}
 }
@@ -206,12 +206,9 @@ videos[0].addEventListener("ended", async () => {
 	videos[0].style.display = "none";
 	videos[1].style.opacity = "1";
 	currentVideo = null;
-	videos[1].play();
-	videos[1].addEventListener("ended", () =>{
-		videos[1].currentTime = 0.1;
-		videos[1].play();
-	})
 	audios[0].play();
+	videos[1].loop = true;
+	videos[1].play();
 	const option1 = buttons.appendChild(document.createElement("button"));
 	const option2 = buttons.appendChild(document.createElement("button"));
 	option1.classList.add("option");
