@@ -336,7 +336,9 @@ videos[7].addEventListener("ended", async () => {
 	thirdInteraction.style.opacity = "1";
 	thirdInteraction.style.pointerEvents = "all";
 	let buttons = thirdInteraction.getElementsByTagName("button");
+	const thirdTimer = handleTimer(10, buttons[0]);
 	buttons[0].addEventListener("click", async () => {
+		thirdTimer();
 		videos[8].style.opacity = "0";
 		videos[8].pause();
 		thirdInteraction.style.opacity = "0";
@@ -347,5 +349,4 @@ videos[7].addEventListener("ended", async () => {
 		videos[9].play();
 		currentVideo = videos[9];
 	});
-	handleTimer(10, buttons[0]);
 });
