@@ -41,8 +41,8 @@ button.addEventListener("click", async () => {
 	button.classList.remove("buttonHover");
 	button.style.pointerEvents = "none";
 	await sleep(300);
-	button.style.height = "calc(var(--scale)*20px)";
-	button.style.width = "calc(var(--scale)*100px)";
+	button.style.height = "20px";
+	button.style.width = "calc(var(--scale)*140px)";
 	button.style.borderRadius = "10px";
 	await sleep(400);
 	progressBar.style.opacity = "1";
@@ -75,24 +75,24 @@ function UpdateProgressBar() {
 	progressBar.style.width = `calc(${progress}% - 20px)`;
 }
 
-document
-	.getElementById("passwordForm")
-	.addEventListener("submit", function (event) {
-		var password = document.getElementById("passwordInput").value;
-		if (password !== "MiloStoleMyBeat123") {
-			document.getElementById("errorMessage").textContent =
-				"Incorrect password!";
-			event.preventDefault(); // Prevent form submission
-		} else {
-			document.getElementById("errorMessage").textContent = "";
-			// Password is correct, you can proceed with form submission
-			document.getElementsByClassName("password-form")[0].style.display =
-				"none";
-			document.getElementById("homepage").style.display = "grid";
-			document.getElementsByClassName("maindiv")[0].style.display = "grid";
-			event.preventDefault();
-		}
-	});
+// document
+// 	.getElementById("passwordForm")
+// 	.addEventListener("submit", function (event) {
+// 		var password = document.getElementById("passwordInput").value;
+// 		if (password !== "MiloStoleMyBeat123") {
+// 			document.getElementById("errorMessage").textContent =
+// 				"Incorrect password!";
+// 			event.preventDefault(); // Prevent form submission
+// 		} else {
+// 			document.getElementById("errorMessage").textContent = "";
+// 			// Password is correct, you can proceed with form submission
+// 			document.getElementsByClassName("password-form")[0].style.display =
+// 				"none";
+// 			document.getElementById("homepage").style.display = "grid";
+// 			document.getElementsByClassName("maindiv")[0].style.display = "grid";
+// 			event.preventDefault();
+// 		}
+// 	});
 
 document.addEventListener("keydown", (e) => {
 	try {
@@ -158,10 +158,12 @@ async function startLoading() {
 		"https://milosmusic.b-cdn.net/MainVideos/2_2.mp4", //6
 		"https://milosmusic.b-cdn.net/MainVideos/3.mp4", //7
 		"https://milosmusic.b-cdn.net/MainVideos/3_1.mp4", //8
-		"https://milosmusic.b-cdn.net/MainVideos/2_22.mp4", //9
+		"https://milosmusic.b-cdn.net/MainVideos/4.mp4", //9
 	].forEach((src, index) => {
 		loadVideo(src, index + 1);
 	});
+	
+	
 }
 
 async function onLoaded() {

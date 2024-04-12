@@ -97,17 +97,15 @@ body {
 	border: 2px solid black;
 	text-decoration: none;
 	cursor: pointer;
-	aspect-ratio: 1/1;
-	width: 14%;
-	max-width: 300px;
-	min-width: 150px;
+	width: calc(var(--scale) * 240px);
+	height: calc(var(--scale) * 240px);
 	border-radius: 50%;
 	z-index: 2;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	transition: height 0.5s ease-in, border-radius 0.3s ease-in-out, width 0.5s ease-in;
+	transition: height 0.4s ease-out, border-radius 0.2s ease-in-out, width 0.4s ease-in;
 	display: grid;
 	align-items: center;
 }
@@ -129,9 +127,7 @@ body {
 
 .lottie {
 	position: absolute;
-	width: 30%;
-	min-width: 200px;
-	max-width: 300px;
+	width: calc(var(--scale) * 400px);
 	height: auto;
 	top: 50%;
 	left: 50%;
