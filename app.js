@@ -100,7 +100,7 @@ document.addEventListener("keydown", (e) => {
 			if (currentVideo.paused) {
 				currentVideo.play();
 			} else {
-				
+
 				currentVideo.pause();
 			}
 		}
@@ -214,7 +214,7 @@ videos[0].addEventListener("ended", async () => {
 	option1.innerHTML = "Tomorrow's a new day, go to sleep";
 	option2.innerHTML = "Lemme check my Phone";
 	buttons.style.opacity = "1";
-	const endTimer = handleTimer(100, option1);
+	const endTimer = handleTimer(10, option1);
 	option1.addEventListener("click", async () => {
 		endTimer();
 		videos[1].style.opacity = "0";
@@ -280,7 +280,7 @@ async function snoozeInteraction() {
 	videos[3].style.opacity = "1";
 	videos[3].play();
 	videos[3].loop = true;
-	snoozeTimers = handleTimer(50, option1);
+	snoozeTimers = handleTimer(5, option1);
 	option1.addEventListener("click", () => secondInteraction(iterCount));
 	option2.addEventListener("click", async () => {
 		snoozeTimers();
@@ -308,9 +308,9 @@ async function secondInteraction(i) {
 	if (i == 1) {
 		buttons.children[0].disabled = true;
 		buttons.children[1].disabled = false;
-		snoozeTimers = handleTimer(50, buttons.children[1]);
+		snoozeTimers = handleTimer(5, buttons.children[1]);
 	} else {
-		snoozeTimers = handleTimer(50, buttons.children[0]);
+		snoozeTimers = handleTimer(5, buttons.children[0]);
 	}
 	videos[3 + i].style.display = "none";
 	videos[4 + i].style.opacity = "1";
