@@ -37,6 +37,12 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+.mainPassword{
+	position: absolute;
+	inset: 0;
+	z-index: 1000;
+	background-color: white;
+}
 .password-form input[type="password"] {
 	width: calc(100% - 10px);
 	margin-bottom: 10px;
