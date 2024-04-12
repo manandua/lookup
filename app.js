@@ -199,13 +199,16 @@ function handleTimer(time, func) {
 const buttons = document.getElementById("buttons");
 videos[0].addEventListener("ended", async () => {
 	videos[0].style.opacity = "0";
-	videos[1].loop = true;
 	audios[0].loop = true;
 	await sleep(900);
 	videos[0].style.display = "none";
 	videos[1].style.opacity = "1";
 	currentVideo = null;
 	videos[1].play();
+	videos[1].addEventListener("ended", () =>{
+		videos[1].currentTime = 0.1;
+		videos[1].play();
+	})
 	audios[0].play();
 	const option1 = buttons.appendChild(document.createElement("button"));
 	const option2 = buttons.appendChild(document.createElement("button"));
