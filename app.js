@@ -157,7 +157,7 @@ async function startLoading() {
 		"https://milosmusic.b-cdn.net/MainVideos/2_22.mp4", //4
 		"https://milosmusic.b-cdn.net/MainVideos/2_3.mp4", //5
 		"https://milosmusic.b-cdn.net/MainVideos/2_2.mp4", //6
-		"https://milosmusic.b-cdn.net/MainVideos/3.mp4", //7
+		"https://milosmusic.b-cdn.net/MainVideos/new_3.mp4", //7
 		"https://milosmusic.b-cdn.net/MainVideos/3_1.mp4", //8
 		"https://milosmusic.b-cdn.net/MainVideos/4.mp4", //9
 	].forEach((src, index) => {
