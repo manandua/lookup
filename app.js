@@ -28,7 +28,7 @@ window.mobileCheck = function () {
 			check = true;
 	})(navigator.userAgent || navigator.vendor || window.opera);
 	if (check) {
-		document.getElementById("mobile").style.display = "none";
+		document.getElementById("mobile").style.display = "flex";
 	}
 };
 window.mobileCheck();
