@@ -421,14 +421,18 @@ body {
 	position: absolute;
 	justify-content: center;
 	align-items: center;
-	opacity: 0;
+	visibility: hidden;
 	transition: opacity 0.5s linear;
 }
 
 #playPauseButton {
-	color: var(--offwhite);
-	font-size: 24px;
+	color: #e2e2e2;
+	font-size: 15em;
 	cursor: pointer;
+}
+
+#playPauseButton:hover {
+	color: #ffffff;
 }
 
 .credits {

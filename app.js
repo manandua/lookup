@@ -86,40 +86,41 @@ document
 		} else {
 			document.getElementById("errorMessage").textContent = "";
 			// Password is correct, you can proceed with form submission
-			document.getElementsByClassName("mainPassword")[0].style.display =
-				"none";
+			document.getElementsByClassName("mainPassword")[0].style.display = "none";
 			document.getElementById("homepage").style.display = "grid";
 			document.getElementsByClassName("maindiv")[0].style.display = "grid";
 			event.preventDefault();
 		}
 	});
 
+document.getElementById("thePlayButton").addEventListener("click", () => {
+	document.getElementById("homepage").style.display = "none";
+	document.getElementsByClassName("maindiv")[0].style.display = "grid";
+});
+
 document.addEventListener("keydown", (e) => {
 	try {
-		
 		if (e.key == " ") {
 			if (currentVideo.paused) {
 				currentVideo.play();
+				document.getElementById("playPause").style.visibility = "hidden";
 			} else {
-
 				currentVideo.pause();
+				document.getElementById("playPause").style.visibility = "visible";
 			}
 		}
-	} catch (e) {
-		
-	}
+	} catch (e) {}
 });
 
 async function loadVideo(src, id) {
-	
 	let loadVideo = await fetch(src);
 	let video = await loadVideo.blob();
 	let videoUrl = URL.createObjectURL(video);
 	videos[id - 1].src = videoUrl;
-	
+
 	loadedAssets++;
 	UpdateProgressBar();
-	if (loadedAssets == 3) {
+	if (loadedAssets == sources.length) {
 		await onLoaded();
 	}
 }
@@ -133,11 +134,23 @@ async function loadAudio(src, id) {
 	audios[id - 1].loop = true;
 	loadedAssets++;
 	UpdateProgressBar();
-	if (loadedAssets == 3) {
+	if (loadedAssets == sources.length) {
 		await onLoaded();
 	}
 }
 
+let sources = [
+	"https://milosmusic.b-cdn.net/MainVideos/1.mp4", //0
+	"https://milosmusic.b-cdn.net/MainVideos/1_1.mp4", //1
+	"https://milosmusic.b-cdn.net/MainVideos/2.mp4", //2
+	"https://milosmusic.b-cdn.net/MainVideos/2_1.mp4", //3
+	"https://milosmusic.b-cdn.net/MainVideos/2_22.mp4", //4
+	"https://milosmusic.b-cdn.net/MainVideos/2_3.mp4", //5
+	"https://milosmusic.b-cdn.net/MainVideos/2_2.mp4", //6
+	"https://milosmusic.b-cdn.net/MainVideos/new_3.mp4", //7
+	"https://milosmusic.b-cdn.net/MainVideos/3_1.mp4", //8
+	"https://milosmusic.b-cdn.net/MainVideos/4.mp4", //9
+];
 // loading assets
 async function startLoading() {
 	// loadVideo("./videos/1_4k.mp4", 1);
@@ -149,22 +162,9 @@ async function startLoading() {
 	// loadVideo("./videos/2_2_4k.mp4", 7);
 	loadAudio("./audio/1.mp3", 1);
 	// loadVideo("./videos/3_4k.mp4", 8)
-	[
-		"https://milosmusic.b-cdn.net/MainVideos/1.mp4", //0
-		"https://milosmusic.b-cdn.net/MainVideos/1_1.mp4", //1
-		"https://milosmusic.b-cdn.net/MainVideos/2.mp4", //2
-		"https://milosmusic.b-cdn.net/MainVideos/2_1.mp4", //3
-		"https://milosmusic.b-cdn.net/MainVideos/2_22.mp4", //4
-		"https://milosmusic.b-cdn.net/MainVideos/2_3.mp4", //5
-		"https://milosmusic.b-cdn.net/MainVideos/2_2.mp4", //6
-		"https://milosmusic.b-cdn.net/MainVideos/new_3.mp4", //7
-		"https://milosmusic.b-cdn.net/MainVideos/3_1.mp4", //8
-		"https://milosmusic.b-cdn.net/MainVideos/4.mp4", //9
-	].forEach((src, index) => {
+	sources.forEach((src, index) => {
 		loadVideo(src, index + 1);
 	});
-	
-	
 }
 
 async function onLoaded() {
@@ -357,15 +357,16 @@ videos[9].addEventListener("ended", async () => {
 	document.getElementById("credits").style.opacity = "1";
 });
 
+document
+	.getElementById("experienceAgain")
+	.addEventListener("click", async () => {
+		document.getElementById("credits").style.opacity = "0";
+		await sleep(1000);
+		document.getElementById("credits").style.display = "none";
+		resetVideos();
+	});
 
-document.getElementById("experienceAgain").addEventListener("click", async () => {
-	document.getElementById("credits").style.opacity = "0";
-	await sleep(1000);
-	document.getElementById("credits").style.display = "none";
-	resetVideos();
-});
-
-async function showCredits(){
+async function showCredits() {
 	document.getElementById("credits").style.display = "flex";
 	document.getElementById("credits").style.opacity = "1";
 }
