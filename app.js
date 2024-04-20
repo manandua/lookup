@@ -349,3 +349,39 @@ videos[7].addEventListener("ended", async () => {
 		currentVideo = videos[9];
 	});
 });
+videos[9].addEventListener("ended", async () => {
+	videos[9].style.opacity = "0";
+	videos[9].pause();
+	await sleep(1000);
+	document.getElementById("credits").style.display = "flex";
+	document.getElementById("credits").style.opacity = "1";
+});
+
+
+document.getElementById("experienceAgain").addEventListener("click", async () => {
+	document.getElementById("credits").style.opacity = "0";
+	await sleep(1000);
+	document.getElementById("credits").style.display = "none";
+	resetVideos();
+});
+
+async function showCredits(){
+	document.getElementById("credits").style.display = "flex";
+	document.getElementById("credits").style.opacity = "1";
+}
+
+function resetVideos() {
+	for (let i = 0; i < videos.length; i++) {
+		if (i == 0) {
+			videos[i].style.opacity = "1";
+			videos[i].style.display = "block";
+			continue;
+		}
+		videos[i].style.opacity = "0";
+		videos[i].currentTime = 0;
+		videos[i].style.display = "block";
+		videos[i].pause();
+	}
+	videos[0].play();
+	currentVideo = videos[0];
+}

@@ -2,7 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+		/>
 		<title>Look UP</title>
 		<link rel="stylesheet" href="style.css" />
 		<style>
@@ -14,8 +17,16 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/2.0.4/lottie-player.js" integrity="sha512-4mDxQBT0YXL3aGTpFMlhtbXUCcaL7yckodGiM/4hwMSU47WQP9I4qqj7VwpDSK1zzssoitxS8TgOJhPgCMQppw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/2.0.4/lottie-player.js"
+			integrity="sha512-4mDxQBT0YXL3aGTpFMlhtbXUCcaL7yckodGiM/4hwMSU47WQP9I4qqj7VwpDSK1zzssoitxS8TgOJhPgCMQppw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<div class="mobile" id="mobile">
@@ -23,72 +34,75 @@
 				<p>
 					<span class="italic">Ah.</span>
 				</p>
-				<p>Currently this experience only works on <span class="bold">desktop devices.</span></p>
+				<p>
+					Currently this experience only works on
+					<span class="bold">desktop devices.</span>
+				</p>
 			</div>
 			<lottie-player
-					src="./lottie/logo_lookuptest.json"
-					autoplay
-					loop
-					class="mobileLottie"
-				></lottie-player>
+				src="./lottie/logo_lookuptest.json"
+				autoplay
+				loop
+				class="mobileLottie"
+			></lottie-player>
 		</div>
 		<div class="mainPassword">
 			<div class="password-form">
 				<form id="passwordForm">
-					<input type="password" placeholder="Enter your password" required id="passwordInput">
-					<input type="submit" value="Submit">
+					<input
+						type="password"
+						placeholder="Enter your password"
+						required
+						id="passwordInput"
+					/>
+					<input type="submit" value="Submit" />
 					<p id="errorMessage" class="error-message"></p>
 				</form>
 			</div>
 		</div>
 		<div id="homepage">
-
-				<lottie-player
-					src="./lottie/logo_lookuptest.json"
-					autoplay
-					loop
-					class="logoLottie"
-				></lottie-player>
-			
+			<lottie-player
+				src="./lottie/logo_lookuptest.json"
+				autoplay
+				loop
+				class="logoLottie"
+			></lottie-player>
 
 			<!-- <button id="startButton" class="buttonStyle">
 				<div id="play"></div>
 			</button> -->
-			
-				<!-- <div class="lottie" id="svg"></div> -->
-				<lottie-player
-					src="./lottie/play_phone_centered.json"
-					class="lottie"
-					id="svg"
-				></lottie-player>
-				<div id="startButton" class="buttonStyle buttonHover">
-					<div id="progress"></div>
-				</div>
-			
 
-			<div class='rightHeading'>Follow Along Milo's journey</div>
+			<!-- <div class="lottie" id="svg"></div> -->
+			<lottie-player
+				src="./lottie/play_phone_centered.json"
+				class="lottie"
+				id="svg"
+			></lottie-player>
+			<div id="startButton" class="buttonStyle buttonHover">
+				<div id="progress"></div>
+			</div>
+
+			<div class="rightHeading">Follow Along Milo's journey</div>
 		</div>
 		<div class="maindiv">
 			<div id="overlay">
 				<div id="playPause">
 					<div id="playPauseButton">
-						<i class='bx bx-play'></i>
+						<i class="bx bx-play"></i>
 					</div>
 				</div>
 				<div id="thirdInteraction">
-					<div>
-						Your Library
-					</div>
+					<div>Your Library</div>
 					<button>
-						<i class='bx bxs-music'></i>
+						<i class="bx bxs-music"></i>
 						Soul Crushing Thursday Evening
 					</button>
 					<button>
-						<i class='bx bxs-music'></i>
+						<i class="bx bxs-music"></i>
 						Lofi Girl - beats to relax/study to
 					</button>
 					<button>
-						<i class='bx bxs-music'></i>
+						<i class="bx bxs-music"></i>
 						Milo's Vault (unreleased)
 					</button>
 				</div>
@@ -108,6 +122,78 @@
 			<video id="video8" class="video" playsinline preload="auto"></video>
 			<video id="video9" class="video" playsinline preload="auto"></video>
 			<video id="video10" class="video" playsinline preload="auto"></video>
+		</div>
+		<div class="credits" id="credits">
+			<div class="left">
+				<div>
+					<div>
+						<h1>MANAN DUA</h1>
+						<div>DIRECTED AND ANIMATED</div>
+					</div>
+					<div>
+						<p>
+							Look Up strives to put a light on the varied struggles young
+							creatives face today, particularly with digital dependency.
+						</p>
+						<p>
+							The interactivity presents an illusion of choice, just like your
+							mind that is distracted and craves digital dopamine.
+						</p>
+						<a href="https://www.manandua.com/lookup">Read Documentation</a>
+					</div>
+				</div>
+				<div>
+					<p>
+						This film was made as a part of my thesis for Parsons School of Design
+						under the guidance of Dinah Fried and Joe Marianek.
+					</p>
+					<button id="experienceAgain">
+						EXPERIENCE AGAIN
+					</button>
+				</div>
+			</div>
+			<div class="right">
+				<div class="top">
+					<div>
+						<h1>SHIVEN AGARWAL</h1>
+						<p>INTERACTIVITY DEVELOPER</p>
+					</div>
+					<div>
+						<h1>ASHTON GARCIA</h1>
+						<p>MILOS VOICE ACTOR</p>
+					</div>
+					<div>
+						<h1>RIVER ROSE</h1>
+						<p>REYNS VOICE ACTOR</p>
+					</div>
+					<div>
+						<h1>CRISTOPHER MANJARREZ</h1>
+						<p>SOUND DESIGNER</p>
+					</div>
+					<div>
+						<h1>EZRA MONTOYO</h1>
+						<p>SOUND DESIGNER</p>
+					</div>
+					<div style="margin-top: 45px;">
+						<p id="textcredits">
+							IVN - Lost and Waiting<br />
+							Flair for Maya <br />
+							Samarth Bhatia <br />Kevin MacLeod
+						</p>
+						<p>ADDITIONAL CREDITS</p>
+					</div>
+					<div style="display: none;">
+						<p id="interest">Would you be interested <br /> in supporting an indie artist  <br />with his future endeavors?</p>
+						<button class="donate">DONATE</button>
+					</div>
+				</div>
+				<div class="bottom">
+					<a href="https://lookupfilm.com">
+						<img src="Photos/logo.png" href="lookupfilm.com" class="logo">
+					</a>
+					<a href="https://lookupfilm.com" class="lookup">www.lookupfilm.com</a>
+				</div>
+			</div>
 		</div>
 		<audio id="audio1" class="audio"></audio>
 	</body>
