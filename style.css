@@ -438,6 +438,7 @@ body {
 	z-index: 1000;
 	background: #edf0da;
 	font-size: 15px;
+	transition: opacity 0.5s linear;
 }
 
 .left {
