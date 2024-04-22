@@ -368,8 +368,7 @@ document
 	.getElementById("experienceAgain")
 	.addEventListener("click", async () => {
 		document.getElementById("credits").style.opacity = "0";
-		await sleep(1000);
-		document.getElementById("credits").style.display = "none";
+		document.getElementById("credits").style.visibility = "hidden";
 		resetVideos();
 	});
 
@@ -393,3 +392,10 @@ function resetVideos() {
 	videos[0].play();
 	currentVideo = videos[0];
 }
+
+
+
+document.getElementById("readMore").addEventListener("click", () => {
+	document.getElementById("credits").style.opacity = "1";
+	document.getElementById("credits").style.visibility = "visible";
+});

@@ -82,10 +82,28 @@ body {
 	padding: 2em;
 }
 
-.rightHeading {
-	font-size: 2em;
+.rightHeading{
 	font-family: "Satoshi-Medium", sans-serif;
 	grid-column: 3;
+}
+
+.rightHeading p{
+	font-size: 2em;
+	margin: 0;
+	color: var(--dark-grey);
+}
+
+#readMore{
+	font-size: 1.125em;
+	font-weight: 500;
+	background: transparent;
+	border: none;
+	color: var(--dark-grey);
+	margin-top: 15px;
+	padding: 0;
+	position: relative;
+	cursor: pointer;
+	font-family: 'Satoshi-VariableItalic', sans-serif;
 }
 
 .logoLottie {
@@ -529,6 +547,27 @@ body {
 	color: #edf0da;
 }
 
+.underLineEffect{
+	position: relative;
+}
+.underLineEffect::after{
+	background: none repeat scroll 0 0 transparent;
+	bottom: -4px;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	background: var(--underline-color);
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+
+.underLineEffect:hover::after{
+	width: 100%;
+	left: 0;
+}
+
 #experienceAgain{
 	font-size: 1.125em;
 	font-weight: 500;
@@ -540,22 +579,6 @@ body {
 	position: relative;
 }
 
-#experienceAgain:after {    
-	background: none repeat scroll 0 0 transparent;
-	bottom: -4px;
-	content: "";
-	display: block;
-	height: 2px;
-	left: 50%;
-	position: absolute;
-	background: #fff;
-	transition: width 0.3s ease 0s, left 0.3s ease 0s;
-	width: 0;
-  }
-#experienceAgain:hover:after { 
-	width: 100%; 
-	left: 0; 
-  }
 #experienceAgain:hover {
 	color: #edf0da;
 	cursor: pointer;
@@ -657,3 +680,4 @@ body {
 	background: #1c2321;
 	color: #edf0da;
 }
+
