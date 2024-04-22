@@ -366,6 +366,8 @@ body {
 	flex-direction: column;
 	display: none;
 	align-items: center;
+	line-height: 100%;
+	letter-spacing: -0.02em;
 }
 .mobile p {
 	margin: 0;
