@@ -99,7 +99,7 @@ body {
 	background: transparent;
 	border: none;
 	color: var(--dark-grey);
-	margin-top: 15px;
+	margin-top: 10px;
 	padding: 0;
 	position: relative;
 	cursor: pointer;
@@ -449,6 +449,9 @@ body {
 	color: #e2e2e2;
 	cursor: pointer;
 	position: relative;
+	width: calc(var(--scale) * 150px);
+	height: calc(var(--scale) * 150px);
+
 }
 
 #thePlayButton {
@@ -458,7 +461,7 @@ body {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	width: calc(var(--scale) * 150px);
-	fill: #e2e2e2
+	height: calc(var(--scale) * 150px);
 }
 #thePauseButton {
 	position: absolute;
