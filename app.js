@@ -94,8 +94,9 @@ document
 	});
 
 document.getElementById("thePlayButton").addEventListener("click", () => {
-	document.getElementById("homepage").style.display = "none";
-	document.getElementsByClassName("maindiv")[0].style.display = "grid";
+	currentVideo.play();
+	document.getElementById("playPause").style.opacity = "0";
+	document.getElementById("playPause").style.visibility = "hidden";
 });
 
 document.addEventListener("keydown", (e) => {
@@ -103,9 +104,11 @@ document.addEventListener("keydown", (e) => {
 		if (e.key == " ") {
 			if (currentVideo.paused) {
 				currentVideo.play();
+				document.getElementById("playPause").style.opacity = "0";
 				document.getElementById("playPause").style.visibility = "hidden";
 			} else {
 				currentVideo.pause();
+				document.getElementById("playPause").style.opacity = "1";
 				document.getElementById("playPause").style.visibility = "visible";
 			}
 		}
@@ -200,6 +203,9 @@ function handleTimer(time, func) {
 
 const buttons = document.getElementById("buttons");
 videos[0].addEventListener("ended", async () => {
+	while (buttons.firstChild) {
+		buttons.removeChild(buttons.firstChild);
+	}
 	videos[0].style.opacity = "0";
 	audios[0].loop = true;
 	await sleep(900);
@@ -216,7 +222,7 @@ videos[0].addEventListener("ended", async () => {
 	option1.innerHTML = "Tomorrow's a new day, go to sleep";
 	option2.innerHTML = "Lemme check my Phone";
 	buttons.style.opacity = "1";
-	const endTimer = handleTimer(10, option1);
+	const endTimer = handleTimer(100, option1);
 	option1.addEventListener("click", async () => {
 		endTimer();
 		videos[1].style.opacity = "0";
@@ -329,6 +335,7 @@ videos[7].addEventListener("ended", async () => {
 	await sleep(1000);
 	videos[8].style.display = "block";
 	videos[8].style.opacity = "1";
+	videos[8].loop = true;
 	videos[8].play();
 	currentVideo = videos[8];
 	const thirdInteraction = document.getElementById("thirdInteraction");
@@ -336,25 +343,25 @@ videos[7].addEventListener("ended", async () => {
 	thirdInteraction.style.pointerEvents = "all";
 	let buttons = thirdInteraction.getElementsByTagName("button");
 	const thirdTimer = handleTimer(10, buttons[0]);
-	buttons[0].addEventListener("click", async () => {
-		thirdTimer();
-		videos[8].style.opacity = "0";
-		videos[8].pause();
-		thirdInteraction.style.opacity = "0";
-		thirdInteraction.style.pointerEvents = "none";
-		await sleep(1000);
-		videos[9].style.display = "block";
-		videos[9].style.opacity = "1";
-		videos[9].play();
-		currentVideo = videos[9];
+	buttons.forEach((button) => {
+		button.addEventListener("click", async () => {
+			thirdTimer();
+			videos[8].style.opacity = "0";
+			videos[8].pause();
+			thirdInteraction.style.opacity = "0";
+			thirdInteraction.style.pointerEvents = "none";
+			await sleep(1000);
+			videos[9].style.display = "block";
+			videos[9].style.opacity = "1";
+			videos[9].play();
+			currentVideo = videos[9];
+		});
 	});
 });
+
 videos[9].addEventListener("ended", async () => {
-	videos[9].style.opacity = "0";
-	videos[9].pause();
-	await sleep(1000);
-	document.getElementById("credits").style.display = "flex";
 	document.getElementById("credits").style.opacity = "1";
+	document.getElementById("credits").style.visibility = "visible";
 });
 
 document

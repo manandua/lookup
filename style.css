@@ -422,27 +422,55 @@ body {
 	justify-content: center;
 	align-items: center;
 	visibility: hidden;
-	transition: opacity 0.5s linear;
+	transition: opacity 0.5s linear, visibility 0.5s;
 }
 
 #playPauseButton {
 	color: #e2e2e2;
-	font-size: 15em;
 	cursor: pointer;
+	position: relative;
 }
 
-#playPauseButton:hover {
-	color: #ffffff;
+#thePlayButton {
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: calc(var(--scale) * 150px);
+	fill: #e2e2e2
+}
+#thePauseButton {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: calc(var(--scale) * 150px);
+	fill: #e2e2e2;
+}
+
+#thePauseButton path{
+	fill: inherit;
+}
+
+#thePlayButton path{
+	fill: inherit;
+}
+
+#thePlayButton:hover{
+	fill: rgb(255, 255, 255);
 }
 
 .credits {
 	position: absolute;
+	opacity: 0;
 	inset: 0;
-	display: none;
+	display: flex;
 	z-index: 1000;
 	background: #edf0da;
 	font-size: 15px;
-	transition: opacity 0.5s linear;
+	visibility: hidden;
+	transition: opacity 0.5s linear, visibility 0.5s;
 }
 
 .left {
