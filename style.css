@@ -7,13 +7,7 @@
 	--offwhite: #edf0da;
 	--red-orange: #be3f23;
 	--light-grey: #2d3935;
-	--fs-sm: clamp(0.8rem, 0.1vi + 0.78rem, 0.89rem);
-	--fs-base: clamp(1rem, 0.2vi + 0.95rem, 1.19rem);
-	--fs-md: clamp(1.25rem, 0.35vi + 1.16rem, 1.58rem);
-	--fs-lg: clamp(1.56rem, 0.58vi + 1.42rem, 2.11rem);
-	--fs-xl: clamp(1.95rem, 0.9vi + 1.73rem, 2.81rem);
-	--fs-xxl: clamp(2.44rem, 1.38vi + 2.1rem, 3.75rem);
-	--fs-xxxl: clamp(3.05rem, 2.05vi + 2.54rem, 5rem);
+	
 }
 
 * {
@@ -99,7 +93,7 @@ body {
 	background: transparent;
 	border: none;
 	color: var(--dark-grey);
-	margin-top: 15px;
+	margin-top: 10px;
 	padding: 0;
 	position: relative;
 	cursor: pointer;
@@ -449,6 +443,11 @@ body {
 	color: #e2e2e2;
 	cursor: pointer;
 	position: relative;
+	width: calc(var(--scale) * 220px);
+	height: calc(var(--scale) * 220px);
+	border-radius: 50%;
+	border: 2px solid var(--dark-grey);
+	background: var(--offwhite);
 }
 
 #thePlayButton {
@@ -456,9 +455,9 @@ body {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-45%, -50%);
 	width: calc(var(--scale) * 150px);
-	fill: #e2e2e2
+	height: calc(var(--scale) * 150px);
 }
 #thePauseButton {
 	position: absolute;
@@ -466,20 +465,9 @@ body {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	width: calc(var(--scale) * 150px);
-	fill: #e2e2e2;
+	visibility: hidden;
 }
 
-#thePauseButton path{
-	fill: inherit;
-}
-
-#thePlayButton path{
-	fill: inherit;
-}
-
-#thePlayButton:hover{
-	fill: rgb(255, 255, 255);
-}
 
 .credits {
 	position: absolute;
