@@ -93,21 +93,30 @@ document
 		}
 	});
 
-document.getElementById("thePlayButton").addEventListener("click", () => {
+document.getElementById("playPauseButton").addEventListener("click", () => {
+	document.getElementById("thePlayButton").style.visibility="hidden"
+	document.getElementById("thePauseButton").style.visibility="visible"
 	currentVideo.play();
 	document.getElementById("playPause").style.opacity = "0";
 	document.getElementById("playPause").style.visibility = "hidden";
+
 });
+
+
 
 document.addEventListener("keydown", (e) => {
 	try {
 		if (e.key == " ") {
 			if (currentVideo.paused) {
+				document.getElementById("thePauseButton").style.visibility="visible";
+				document.getElementById("thePlayButton").style.visibility="hidden";
 				currentVideo.play();
 				document.getElementById("playPause").style.opacity = "0";
 				document.getElementById("playPause").style.visibility = "hidden";
 			} else {
 				currentVideo.pause();
+				document.getElementById("thePauseButton").style.visibility="hidden";
+				document.getElementById("thePlayButton").style.visibility="visible";
 				document.getElementById("playPause").style.opacity = "1";
 				document.getElementById("playPause").style.visibility = "visible";
 			}
@@ -163,7 +172,7 @@ async function startLoading() {
 	// loadVideo("./videos/2_2.mp4", 5);
 	// loadVideo("./videos/2_3.mp4", 6);
 	// loadVideo("./videos/2_2_4k.mp4", 7);
-	loadAudio("./audio/1.mp3", 1);
+	loadAudio("./audio/firstInteractionMusic.mp3", 1);
 	// loadVideo("./videos/3_4k.mp4", 8)
 	sources.forEach((src, index) => {
 		loadVideo(src, index + 1);
@@ -341,9 +350,9 @@ videos[7].addEventListener("ended", async () => {
 	const thirdInteraction = document.getElementById("thirdInteraction");
 	thirdInteraction.style.opacity = "1";
 	thirdInteraction.style.pointerEvents = "all";
-	let buttons = thirdInteraction.getElementsByTagName("button");
+	const buttons = thirdInteraction.getElementsByTagName("button");
 	const thirdTimer = handleTimer(10, buttons[0]);
-	buttons.forEach((button) => {
+	[...buttons].forEach((button) => {
 		button.addEventListener("click", async () => {
 			thirdTimer();
 			videos[8].style.opacity = "0";
