@@ -93,18 +93,20 @@ document
 		}
 	});
 
-document.getElementById("playPauseButton").addEventListener("click", () => {
+document.getElementById("playPauseButton").addEventListener("click", async () => {
 	document.getElementById("thePlayButton").style.visibility="hidden"
 	document.getElementById("thePauseButton").style.visibility="visible"
 	currentVideo.play();
 	document.getElementById("playPause").style.opacity = "0";
-	document.getElementById("playPause").style.visibility = "hidden";
-
+	(async ()=>{
+		await sleep(1000);
+		document.getElementById("playPause").style.display="none"
+	})();
 });
 
 
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", async (e) => {
 	try {
 		if (e.key == " ") {
 			if (currentVideo.paused) {
@@ -112,13 +114,18 @@ document.addEventListener("keydown", (e) => {
 				document.getElementById("thePlayButton").style.visibility="hidden";
 				currentVideo.play();
 				document.getElementById("playPause").style.opacity = "0";
-				document.getElementById("playPause").style.visibility = "hidden";
+				(async ()=>{
+					await sleep(1000);
+					document.getElementById("playPause").style.display="none"
+				})();
+
 			} else {
 				currentVideo.pause();
+
+				document.getElementById("playPause").style.display = "flex"
+				document.getElementById("playPause").style.opacity = "1";
 				document.getElementById("thePauseButton").style.visibility="hidden";
 				document.getElementById("thePlayButton").style.visibility="visible";
-				document.getElementById("playPause").style.opacity = "1";
-				document.getElementById("playPause").style.visibility = "visible";
 			}
 		}
 	} catch (e) {}
