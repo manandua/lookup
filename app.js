@@ -238,7 +238,7 @@ videos[0].addEventListener("ended", async () => {
 	option1.innerHTML = "Tomorrow's a new day, go to sleep";
 	option2.innerHTML = "Lemme check my Phone";
 	buttons.style.opacity = "1";
-	const endTimer = handleTimer(100, option1);
+	const endTimer = handleTimer(10, option1);
 	option1.addEventListener("click", async () => {
 		endTimer();
 		videos[1].style.opacity = "0";

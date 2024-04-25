@@ -93,7 +93,6 @@ body {
 	background: transparent;
 	border: none;
 	color: var(--dark-grey);
-	margin-top: 10px;
 	padding: 0;
 	position: relative;
 	cursor: pointer;
