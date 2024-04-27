@@ -93,39 +93,65 @@ document
 		}
 	});
 
-document.getElementById("playPauseButton").addEventListener("click", async () => {
-	document.getElementById("thePlayButton").style.visibility="hidden"
-	document.getElementById("thePauseButton").style.visibility="visible"
-	currentVideo.play();
-	document.getElementById("playPause").style.opacity = "0";
-	(async ()=>{
-		await sleep(1000);
-		document.getElementById("playPause").style.display="none"
-	})();
+document
+	.getElementById("playPauseButton")
+	.addEventListener("click", async () => {
+		
+		currentVideo.play();
+		hideBigPlayPause();
+		tinyPlayToPause();
+	});
+
+document.getElementById("tinyPlayPause").addEventListener("click", async () => {
+	if (currentVideo.paused) {
+		tinyPlayToPause();
+		currentVideo.play();
+		hideBigPlayPause();
+	} else {
+		tinyPauseToPlay();
+		currentVideo.pause();
+		showBigPlayPause();
+	}
 });
 
+function showBigPlayPause() {
+	document.getElementById("playPause").style.display = "flex";
+	document.getElementById("playPause").style.opacity = "1";
+	document.getElementById("thePauseButton").style.visibility = "hidden";
+	document.getElementById("thePlayButton").style.visibility = "visible";
+}
 
+function hideBigPlayPause() {
+	document.getElementById("thePauseButton").style.visibility = "visible";
+	document.getElementById("thePlayButton").style.visibility = "hidden";
+	document.getElementById("playPause").style.opacity = "0";
+	(async () => {
+		await sleep(500);
+		document.getElementById("playPause").style.display = "none";
+	})();
+}
+
+function tinyPauseToPlay(){
+	document.getElementById("tinyPauseButton").style.display = "none";
+		document.getElementById("tinyPlayButton").style.display = "block";
+}
+
+function tinyPlayToPause(){
+	document.getElementById("tinyPauseButton").style.display = "block";
+		document.getElementById("tinyPlayButton").style.display = "none";
+}
 
 document.addEventListener("keydown", async (e) => {
 	try {
 		if (e.key == " ") {
 			if (currentVideo.paused) {
-				document.getElementById("thePauseButton").style.visibility="visible";
-				document.getElementById("thePlayButton").style.visibility="hidden";
 				currentVideo.play();
-				document.getElementById("playPause").style.opacity = "0";
-				(async ()=>{
-					await sleep(1000);
-					document.getElementById("playPause").style.display="none"
-				})();
-
+				tinyPlayToPause();
+				hideBigPlayPause();
 			} else {
 				currentVideo.pause();
-
-				document.getElementById("playPause").style.display = "flex"
-				document.getElementById("playPause").style.opacity = "1";
-				document.getElementById("thePauseButton").style.visibility="hidden";
-				document.getElementById("thePlayButton").style.visibility="visible";
+				tinyPauseToPlay();
+				showBigPlayPause();
 			}
 		}
 	} catch (e) {}
@@ -191,6 +217,8 @@ async function onLoaded() {
 	videos[0].currentTime = 0.1;
 	await sleep(1500);
 	videos[0].style.opacity = "1";
+	document.getElementById("tinyPlayPause").style.opacity = "1";
+	document.getElementById("tinyPlayPause").style.pointerEvents = "all";
 	await sleep(400);
 	videos[0].play();
 	currentVideo = videos[0];
@@ -408,8 +436,6 @@ function resetVideos() {
 	videos[0].play();
 	currentVideo = videos[0];
 }
-
-
 
 document.getElementById("readMore").addEventListener("click", () => {
 	document.getElementById("credits").style.opacity = "1";

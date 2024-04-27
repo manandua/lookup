@@ -436,8 +436,12 @@ body {
 	align-items: center;
 	display: none;
 	transition: opacity 0.5s linear;
+	pointer-events: none;
 }
 
+#playPause *{
+	pointer-events: all;
+}
 #playPauseButton {
 	color: #e2e2e2;
 	cursor: pointer;
@@ -670,3 +674,33 @@ body {
 	color: #edf0da;
 }
 
+#tinyPlayPause{
+	position: absolute;
+	bottom: calc(var(--scale) * 10px);
+	left: calc(var(--scale) * 10px);
+	height: calc(var(--scale) * 40px);
+	width: calc(var(--scale) * 40px);
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	pointer-events: none;
+}
+
+#tinyPlayPause:hover{
+	cursor: pointer;
+}
+
+#tinyPlayButton{
+	display: none;
+}
+
+#tinyPlayPause svg{
+	height: 120%;
+	width: 120%;
+	position: absolute;
+}
+
+#tinyPlayPause svg path{
+	fill: #edf0da;
+	stroke: #edf0da;
+}
