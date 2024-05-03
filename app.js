@@ -127,7 +127,9 @@ function hideBigPlayPause() {
 	document.getElementById("playPause").style.opacity = "0";
 	(async () => {
 		await sleep(500);
-		document.getElementById("playPause").style.display = "none";
+		if (!currentVideo.paused){
+			document.getElementById("playPause").style.display = "none";
+		}
 	})();
 }
 
