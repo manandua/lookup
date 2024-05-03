@@ -75,23 +75,23 @@ function UpdateProgressBar() {
 	progressBar.style.width = `calc(${progress}% - 20px)`;
 }
 
-document
-	.getElementById("passwordForm")
-	.addEventListener("submit", function (event) {
-		var password = document.getElementById("passwordInput").value;
-		if (password !== "MiloStoleMyBeat123") {
-			document.getElementById("errorMessage").textContent =
-				"Incorrect password!";
-			event.preventDefault(); // Prevent form submission
-		} else {
-			document.getElementById("errorMessage").textContent = "";
-			// Password is correct, you can proceed with form submission
-			document.getElementsByClassName("mainPassword")[0].style.display = "none";
-			document.getElementById("homepage").style.display = "grid";
-			document.getElementsByClassName("maindiv")[0].style.display = "grid";
-			event.preventDefault();
-		}
-	});
+// document
+// 	.getElementById("passwordForm")
+// 	.addEventListener("submit", function (event) {
+// 		var password = document.getElementById("passwordInput").value;
+// 		if (password !== "MiloStoleMyBeat123") {
+// 			document.getElementById("errorMessage").textContent =
+// 				"Incorrect password!";
+// 			event.preventDefault(); // Prevent form submission
+// 		} else {
+// 			document.getElementById("errorMessage").textContent = "";
+// 			// Password is correct, you can proceed with form submission
+// 			document.getElementsByClassName("mainPassword")[0].style.display = "none";
+// 			document.getElementById("homepage").style.display = "grid";
+// 			document.getElementsByClassName("maindiv")[0].style.display = "grid";
+// 			event.preventDefault();
+// 		}
+// 	});
 
 document
 	.getElementById("playPauseButton")
