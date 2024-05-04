@@ -196,7 +196,7 @@ let sources = [
 	"https://milosmusic.b-cdn.net/MainVideos/2_2.mp4", //6
 	"https://milosmusic.b-cdn.net/MainVideos/new_3.mp4", //7
 	"https://milosmusic.b-cdn.net/MainVideos/3_1.mp4", //8
-	"https://milosmusic.b-cdn.net/MainVideos/4.mp4", //9
+	"https://milosmusic.b-cdn.net/MainVideos/N_4.mp4", //9
 ];
 // loading assets
 async function startLoading() {
